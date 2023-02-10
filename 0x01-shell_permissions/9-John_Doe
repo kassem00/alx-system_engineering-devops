@@ -1,4 +1,2 @@
 #!/bin/bash
-#!/bin/bash
 chmod u+rwx,g+rx-w,o+wx-r hello
-
