@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty | echo -e "\n"
+find . -printf "%f" -empty | echo -e "\n"
