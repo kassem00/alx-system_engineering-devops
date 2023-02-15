@@ -1,2 +1,3 @@
 #!/bin/bash
-SNA=`expr $POWER/$DIVIDE` ;printf "%d\n" $((SNA))
+echo $(($POWER/DIVIDE))
+
