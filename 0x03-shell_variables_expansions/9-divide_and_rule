@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((POWR/$DIVIDE)) 
+printf "%d\n" $((POWR/DIVIDE))
