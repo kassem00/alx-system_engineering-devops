@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e $((POWR/DIVIDE)) "\n"
+echo -e $(($POWR/$DIVIDE)) "\n"
