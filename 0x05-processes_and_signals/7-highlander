@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script continuously prints "To infinity and beyond"
+#+ with a 2-second pause between each iteration.
+# Additionally, it sets up a trap to print "I am invincible!!!"
+# when receiving the SIGTERM signal.
+
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "I am invincible!!!"' SIGTERM
+done
+
