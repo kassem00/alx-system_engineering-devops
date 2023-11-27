@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# get pid contain the word bash
+
+pgrep -l bash
