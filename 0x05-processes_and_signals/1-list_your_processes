@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # displays all process.
 
-ps -A
+ps -auxf
 
