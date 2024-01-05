@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+sudo -s
 cat "localhost 127.0.0.2">>/etc/hosts
 cat "facebook.com to 8.8.8.8">>/etc/hosts
