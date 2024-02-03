@@ -1,0 +1,71 @@
+https://imgur.com/RSSikOS
+
+
+### Web Infrastructure Design:
+
+#### Components:
+1. **Server 1 (Web Server - Nginx):**
+   - Handles initial HTTP requests.
+   - Responsible for static content delivery.
+   - Forwards dynamic requests to the application server.
+   - Communicates with the load balancer (HAproxy).
+
+2. **Server 2 (Application Server):**
+   - Executes the web application codebase.
+   - Processes dynamic requests forwarded by the web server.
+   - Communicates with the MySQL database.
+
+3. **Server 3 (Database Server - MySQL):**
+   - Stores and manages the website's data.
+   - Part of a Primary-Replica (Master-Slave) database cluster.
+
+4. **Load Balancer (HAproxy):**
+   - Distributes incoming traffic across multiple servers to ensure load balancing.
+   - Enhances fault tolerance and improves the system's ability to handle increased traffic.
+
+5. **Application Files (Code Base):**
+   - Contains the codebase for the web application.
+   - Hosted on the application server.
+
+#### Communication Flow:
+1. User accesses www.foobar.com.
+2. Initial HTTP request is handled by the Nginx web server (Server 1).
+3. Nginx forwards dynamic requests to the application server (Server 2).
+4. Application server processes the request, communicates with the MySQL database (Server 3) if necessary, and sends the dynamically generated content back to Nginx.
+5. Nginx delivers the complete web page to the user's browser.
+
+### Specifics about the Infrastructure:
+
+1. **Why Add Two Servers:**
+   - Adding two servers enhances the infrastructure's reliability and capacity. It allows for load balancing and redundancy, reducing the risk of a single point of failure (SPOF).
+
+2. **Why Add a Load Balancer (HAproxy):**
+   - The load balancer improves system reliability and performance by distributing incoming traffic among multiple servers, preventing overload on a single server.
+
+3. **Distribution Algorithm for Load Balancer:**
+   - The load balancer (HAproxy) is configured with a Round Robin distribution algorithm. It evenly distributes incoming requests to each server in a circular sequence.
+
+4. **Active-Active vs. Active-Passive Setup:**
+   - The load balancer enables an Active-Active setup, where both servers are actively handling requests simultaneously. In an Active-Passive setup, only one server is active at a time, with the passive server taking over if the active server fails.
+
+5. **How a Database Primary-Replica Cluster Works:**
+   - In a Primary-Replica (Master-Slave) database cluster, the Primary (Master) node handles write operations, and the Replica (Slave) nodes replicate data from the Primary for read operations.
+
+6. **Difference Between Primary and Replica Node:**
+   - The Primary node handles write operations and serves as the authoritative source for data changes.
+   - The Replica nodes replicate data from the Primary node and are used for read operations. They provide redundancy and can take over if the Primary node fails.
+
+### Issues with the Infrastructure:
+
+1. **Single Point of Failure (SPOF):**
+   - The single load balancer can be a point of failure. If it goes down, it disrupts the distribution of traffic.
+   - Mitigation: Consider adding redundancy to the load balancer (HAproxy) with a secondary instance.
+
+2. **Security Issues (No Firewall, No HTTPS):**
+   - Lack of a firewall exposes the servers to potential security threats.
+   - Absence of HTTPS encryption poses a security risk for user data during transmission.
+   - Mitigation: Implement a firewall to control incoming traffic. Enable HTTPS to secure data in transit.
+
+3. **No Monitoring:**
+   - Without monitoring, it's challenging to identify and address performance issues, security incidents, or potential failures.
+   - Mitigation: Implement a monitoring system to track server performance, security events, and overall system health.

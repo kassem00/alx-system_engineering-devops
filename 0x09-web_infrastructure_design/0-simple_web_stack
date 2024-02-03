@@ -1,0 +1,82 @@
+https://imgur.com/a/ZlDb72h
+
+
+
+
+### Web Infrastructure Design:
+
+#### Components:
+1. **Server:**
+   - Physical or virtual machine hosting the entire web infrastructure.
+   - Has a public IP address (e.g., 8.8.8.8).
+
+2. **Domain Name:**
+   - Domain name: foobar.com
+   - Configured with a www record pointing to the server's IP (www.foobar.com -> 8.8.8.8).
+
+3. **DNS Record Type:**
+   - The DNS record type for www in www.foobar.com is a CNAME (Canonical Name) record. It is an alias of the domain foobar.com.
+
+4. **Web Server (Nginx):**
+   - Handles initial HTTP requests.
+   - Responsible for static content delivery, SSL termination, and forwarding dynamic requests to the application server.
+   - Communicates with the application server to process dynamic content.
+
+5. **Application Server:**
+   - Executes the web application codebase.
+   - Processes dynamic requests forwarded by the web server.
+   - Communicates with the MySQL database for data retrieval or updates.
+
+6. **Application Files (Code Base):**
+   - Contains the codebase for the web application.
+   - Hosted on the application server.
+
+7. **Database (MySQL):**
+   - Stores and manages the website's data.
+   - Interacts with the application server to handle data operations.
+
+#### Communication Flow:
+1. User accesses www.foobar.com.
+2. Initial HTTP request is handled by the Nginx web server.
+3. For dynamic content, Nginx forwards the request to the application server.
+4. Application server executes the codebase and communicates with the MySQL database if necessary.
+5. Application server sends dynamically generated content back to Nginx.
+6. Nginx delivers the complete web page to the user's browser.
+
+### Specifics about the Infrastructure:
+
+1. **What is a Server:**
+   - A server is a physical or virtual machine that provides services, resources, or functionalities to other computers (clients) in a network.
+
+2. **Role of the Domain Name:**
+   - The domain name (foobar.com) is a human-readable alias for the server's IP address. It enables users to access the website using a memorable name.
+
+3. **Type of DNS Record for www:**
+   - The DNS record type for www in www.foobar.com is a CNAME (Canonical Name) record.
+
+4. **Role of the Web Server (Nginx):**
+   - The web server (Nginx) handles initial HTTP requests, serves static content, and forwards dynamic requests to the application server.
+
+5. **Role of the Application Server:**
+   - The application server executes the web application codebase, processes dynamic requests, and communicates with the database.
+
+6. **Role of the Database (MySQL):**
+   - The MySQL database stores and manages the website's data, interacting with the application server for data operations.
+
+7. **Server's Communication with User's Computer:**
+   - The server communicates with the user's computer using the HTTP or HTTPS protocol, delivering web pages in response to user requests.
+
+### Issues with the Infrastructure:
+
+1. **Single Point of Failure (SPOF):**
+   - The infrastructure has a single server, making it vulnerable to failure. If the server goes down, the entire website becomes inaccessible.
+   - Mitigation: Consider introducing redundancy and load balancing by adding more servers.
+
+2. **Downtime During Maintenance:**
+   - Deploying new code or performing maintenance on the web server may lead to downtime.
+   - Mitigation: Implement redundancy, load balancing, and rolling deployments for seamless updates.
+
+3. **Cannot Scale with Incoming Traffic:**
+   - The infrastructure may struggle to handle high traffic volumes.
+   - Mitigation: Implement horizontal scaling by adding more servers and distributing the load using a load balancer.
+
