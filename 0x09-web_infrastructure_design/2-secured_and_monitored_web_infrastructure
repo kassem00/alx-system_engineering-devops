@@ -1,0 +1,40 @@
+**Design of Three-Server Web Infrastructure for www.foobar.com:**
+
+1. **Web Servers:**
+   - Three web servers will host www.foobar.com to ensure high availability and distribute incoming traffic evenly. This redundancy is crucial for fault tolerance.
+
+2. **Load Balancer:**
+   - Implement a load balancer to distribute incoming traffic across the three web servers. This enhances scalability and prevents overloading of a single server.
+
+3. **Firewalls:**
+   - Integrate three firewalls to enhance security. Firewalls act as a barrier between the servers and external networks, controlling incoming and outgoing traffic. Each firewall provides an additional layer of protection against potential threats.
+
+4. **SSL Certificate:**
+   - Utilize an SSL certificate to serve www.foobar.com over HTTPS. This ensures secure communication by encrypting data transmitted between users and the website. HTTPS is particularly crucial for safeguarding sensitive information, such as user credentials.
+
+5. **Monitoring Clients:**
+   - Deploy three monitoring clients, acting as data collectors for services like Sumo Logic. Monitoring is essential for real-time performance analysis, issue detection, and overall system health. The redundancy in monitoring clients ensures continuous data collection even if one client experiences issues.
+
+**Explanations:**
+
+- **Firewalls:**
+  - *Purpose:* Firewalls act as a barrier against unauthorized access and potential threats. They control the incoming and outgoing network traffic based on predetermined security rules, preventing malicious activities and securing the infrastructure.
+
+- **SSL Certificate (HTTPS):**
+  - *Purpose:* HTTPS encrypts the data exchanged between the users and the website, preventing eavesdropping and data tampering. It ensures the confidentiality and integrity of user data, especially crucial for sensitive information like login credentials.
+
+- **Monitoring:**
+  - *Purpose:* Monitoring is vital for proactive issue identification, performance optimization, and ensuring the overall health of the infrastructure. It aids in identifying and resolving potential problems before they impact user experience.
+
+  - *Data Collection:* Monitoring clients collect various metrics, including server performance, resource utilization, and error rates. This data is then processed and analyzed by tools like Sumo Logic to provide insights into the system's health and performance.
+
+**Issues with the Infrastructure:**
+
+- **SSL Termination at Load Balancer:**
+  - *Issue:* Terminating SSL at the load balancer can expose decrypted data within the internal network. It's recommended to terminate SSL at the web servers to maintain end-to-end encryption and security.
+
+- **Single MySQL Server for Writes:**
+  - *Issue:* A single MySQL server for write operations poses a single point of failure. To enhance fault tolerance and scalability, consider implementing a MySQL cluster or replication for write operations.
+
+- **Uniform Server Components:**
+  - *Issue:* Having identical components across servers increases vulnerability to simultaneous failures. Diversifying components, such as using different server types for web, application, and database servers, improves overall system resilience.	

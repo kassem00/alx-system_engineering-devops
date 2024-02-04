@@ -1,0 +1,33 @@
+**Revised Design with Additional Elements:**
+
+1. **Additional Server:**
+   - *Purpose:* Introduce an additional server to enhance scalability and distribute the workload effectively. This additional server can serve as a backup, supporting the overall fault tolerance of the system. 
+
+2. **Load Balancer (HAProxy) Cluster:**
+   - *Purpose:* Configure the load balancers, specifically HAProxy, as a cluster to ensure high availability. Clustering load balancers ensures that if one load balancer fails, the other can seamlessly take over, preventing disruption to the website's availability.
+
+3. **Component Splitting:**
+   - *Purpose:* Separate components (web server, application server, and database) onto dedicated servers to improve resource utilization, maintainability, and scalability.
+
+**Explanations:**
+
+- **Additional Server:**
+  - *Reasoning:* Adding an extra server provides several benefits. It increases overall system capacity, allowing for better handling of traffic spikes or increased resource demands. Additionally, it serves as a failover in case one of the servers experiences issues, contributing to system resilience.
+
+- **Load Balancer Cluster (HAProxy):**
+  - *Reasoning:* Configuring HAProxy as a cluster is essential for achieving high availability. If one load balancer fails, the other seamlessly takes over, preventing a single point of failure and ensuring continuous service availability. Load balancing distributes traffic evenly, optimizing resource utilization and enhancing the system's ability to handle varying workloads.
+
+- **Component Splitting:**
+  - *Reasoning:* Splitting components onto dedicated servers improves the overall efficiency and manageability of the system. Each component (web server, application server, and database) can be independently scaled based on its specific requirements. This separation also facilitates easier troubleshooting and maintenance, as changes or updates to one component do not impact others.
+
+**Considerations:**
+
+- Ensure proper communication and coordination between the load balancer cluster and the servers to maintain seamless failover and load distribution.
+
+- Implement robust backup and recovery mechanisms for the additional server to ensure data integrity and availability.
+
+- Regularly monitor and adjust the load distribution algorithm of the load balancer cluster to optimize performance based on changing traffic patterns.
+
+- Maintain a clear and well-documented architecture to facilitate efficient management and troubleshooting of the distributed components.
+
+By incorporating these additional elements, the overall system gains improved scalability, fault tolerance, and efficiency, aligning with best practices for designing a resilient and high-performing web infrastructure.
