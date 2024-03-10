@@ -15,7 +15,7 @@ if sudo apt-get -y install nginx; then
     }
 }
 events {
-}" > /etc/nginx/sites-available/default
+}" > /etc/nginx/nginx.conf
 
     mkdir -p /var/www/school
 
