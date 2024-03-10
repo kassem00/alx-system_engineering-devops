@@ -6,7 +6,7 @@ sudo apt-get -y update
 if sudo apt-get -y install nginx; then
     echo -e \
 "http {
-    root /var/www/school;
+    root /var/www/;
     index index.html;
     server {
         listen 80;
@@ -17,9 +17,9 @@ if sudo apt-get -y install nginx; then
 events {
 }" > /etc/nginx/sites-available/default
 
-    mkdir -p /var/www/school
+    mkdir -p /var/www/
 
-    echo "Hello World!" > /var/www/school/index.html
+    echo "Hello World!" > /var/www/index.html
 
     sudo service nginx start
 else
