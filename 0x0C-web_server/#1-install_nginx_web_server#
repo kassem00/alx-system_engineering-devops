@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#1. Install nginx web server
+
+sudo apt-get -y update
+
+if sudo apt-get -y install nginx; then
+    echo -e \
+"
+http {
+     server {
+
+        listen 80;
+        location / {
+        root /var/www/;
+        index index.html;
+	}
+     }
+	include /etc/nginx/sites-enabled/$
+}
+
+" > /etc/nginx/nginx.conf
+
+    mkdir -p /var/www/
+
+    echo "Hello World!" > /var/www/index.html
+
+    sudo service nginx start
+else
+    echo "Failed to install Nginx."
+    exit 1
+fi
