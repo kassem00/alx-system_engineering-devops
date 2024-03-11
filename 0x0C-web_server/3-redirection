@@ -6,15 +6,20 @@ sudo apt-get -y update
 if sudo apt-get -y install nginx; then
     echo -e \
 "
-	server {
+server {
 
         listen 80;
+        location / {
+        root /var/www/;
+        index index.html;
+        }
         location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
         }
-	}
 
-" > /etc/nginx/nginx.conf
+}
+
+" > /etc/nginx/sites-available/default
 
     mkdir -p /var/www/
 
