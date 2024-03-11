@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#1. Install nginx web server
+
+# Update package lists
+sudo apt-get -y update
+
+# Install nginx if it's not already installed
+if sudo apt-get -y install nginx; then
+    # Overwrite nginx.conf with new configuration
+    sudo yes | rm /etc/nginx/nginx.conf
+    sudo tee /etc/nginx/nginx.conf > /dev/null << 'EOF'
+http {
+    root /var/www/;
+    index index.html;
+    include /etc/nginx/sites-enabled/*;
+
+    server {
+        listen 80;
+        location / {
+        }
+    }
+}
+EOF
+
+    # Create the root web directory if it doesn't already exist
+    sudo mkdir -p /var/www/
+
+    # Create or overwrite index.html in the web root
+    echo "Hello World!" | sudo tee /var/www/index.html > /dev/null
+
+    # Start or restart nginx to apply changes
+    sudo service nginx start
+else
+    echo "Failed to install Nginx."
+    exit 1
+fi
