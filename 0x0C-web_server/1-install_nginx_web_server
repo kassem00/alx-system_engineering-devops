@@ -5,11 +5,12 @@ sudo apt-get -y update
 
 if sudo apt-get -y install nginx; then
     echo -e \
-"server {
+"
+root /var/www/;
+index index.html;
+server {
         listen 80;
         location / {
-	root /var/www/;
-        index index.html;
         }
 }
 " > /etc/nginx/sites-available/default
