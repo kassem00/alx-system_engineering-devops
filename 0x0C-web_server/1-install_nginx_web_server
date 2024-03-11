@@ -5,17 +5,14 @@ sudo apt-get -y update
 
 if sudo apt-get -y install nginx; then
     echo -e \
-"http {
-    root /var/www/;
-    index index.html;
-    server {
+"server {
         listen 80;
         location / {
+	root /var/www/;
+        index index.html;
         }
-    }
 }
-events {
-}" > /etc/nginx/sites-available/default
+" > /etc/nginx/sites-available/default
 
     mkdir -p /var/www/
 
