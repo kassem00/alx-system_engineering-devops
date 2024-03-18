@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#0x13. Firewall
+#Configure ufw so that it blocks all incoming traffic, except the following TCP ports:
+#22 (SSH)
+#443 (HTTPS SSL)
+#80 (HTTP)
+
+
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
+set -e
+
+echo "Checking for ufw installation..."
+if ! command -v ufw &> /dev/null; then
+    echo "ufw not found, installing..."
+    apt-get update
+    apt-get install -y ufw
+else
+    echo "ufw is already installed."
+fi
+
+echo "Configuring IPv6 in /etc/default/ufw..."
+sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
+
+echo "Resetting ufw to default rules..."
+ufw --force reset
+
+echo "Setting default rules: deny incoming, allow outgoing..."
+ufw default deny incoming
+ufw default allow outgoing
+
+echo "Allowing TCP ports 22 (SSH), 443 (HTTPS), and 80 (HTTP)..."
+ufw allow 22/tcp
+ufw allow 443/tcp
+ufw allow 80/tcp
+
+echo "Enabling ufw..."
+ufw --force enable
+
+echo "ufw configuration completed successfully."
