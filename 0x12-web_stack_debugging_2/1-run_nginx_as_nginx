@@ -10,3 +10,4 @@ sed -i '/^http {/a\    server {\n        listen 8080 default_server;\n\
         listen [::]:8080 default_server;\n    }' $NGINX_CONF
 
 service nginx reload
+service nginx restart
