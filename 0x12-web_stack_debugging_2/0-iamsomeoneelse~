@@ -1,3 +1,0 @@
-#!/bin/bash
-#create new user as an argument
-echo -e "$1"
