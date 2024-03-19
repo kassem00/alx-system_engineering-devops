@@ -1,0 +1,13 @@
+#!/bin/bash
+#create new user as an argument
+#adduser $1
+#su $1
+#whoami
+#
+
+if [ $# -gt  1 ]
+then
+    echo -e "Usage : takes one argument"
+else
+    sudo -s $1 whoami
+fi
