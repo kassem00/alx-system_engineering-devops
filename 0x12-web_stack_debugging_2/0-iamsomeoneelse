@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #create new user as an argument
 
 if [ $# -gt  1 ]
