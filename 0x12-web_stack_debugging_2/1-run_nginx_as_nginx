@@ -1,0 +1,12 @@
+#!/bin/bash
+# Ensure nginx
+
+if ! id "nginx" &>/dev/null; then
+    useradd -r -s /bin/false nginx
+fi
+NGINX_CONF='/etc/nginx/nginx.conf'
+sed -i '/^user /c\user nginx;' $NGINX_CONF
+sed -i '/^http {/a\    server {\n        listen 8080 default_server;\n\
+        listen [::]:8080 default_server;\n    }' $NGINX_CONF
+
+service nginx reload
