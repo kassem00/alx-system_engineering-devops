@@ -5,5 +5,5 @@ if [ $# -gt  1 ]
 then
     echo -e "Usage : takes one argument"
 else
-    sudo -s $1 whoami
+    sudo -u $1 whoami
 fi
