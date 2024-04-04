@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-#configure server with http header
+#1. Install nginx web server
+sudo apt-get -y update
 
-sudo apt-get update
-sudo apt-get -y install nginx
-sudo service nginx start
-
+if sudo apt-get -y install nginx; then
     sudo echo  -e "
 http {
      include /etc/nginx/mime.types;
@@ -25,7 +23,18 @@ server {
 }
 " | sudo tee /etc/nginx/sites-enabled/default > /dev/null
     sudo mkdir -p /var/www/
+
+    echo "Hello World!" | sudo tee /var/www/index.html > /dev/null
+
+    sudo service nginx start
+else
+    echo "Failed to install Nginx."
+    exit 1
+fi
+
+
+
 sudo sed -i "s/http {/http {\n\tadd_header X-Served-By $HOSTNAME;/" /etc/nginx/nginx.conf
-sudo cat "Hello World!" > /usr/share/nginx/html/index.html
+sudo service nginx start
 sudo service nginx restart
 
