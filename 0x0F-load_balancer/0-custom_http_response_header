@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 #1. Install nginx web server
-sudo apt-get -y update
+#sudo apt-get -y update
 
 if sudo apt-get -y install nginx; then
-    sudo echo  -e "
-http {
-     include /etc/nginx/mime.types;
-     default_type application/octet-stream;
-     include /etc/nginx/conf.d/*.conf;
-     include /etc/nginx/sites-enabled/*;
-}
+sudo echo  -e "
+     http {
+     	  include /etc/nginx/mime.types;
+     	  default_type application/octet-stream;
+     	  include /etc/nginx/conf.d/*.conf;
+    	  include /etc/nginx/sites-enabled/*;
+	  }
 events {}
 " | sudo tee /etc/nginx/nginx.conf > /dev/null
-    sudo echo  -e
-"
+sudo touch /etc/nginx/sites-available/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo echo  -e "
 server {
   listen 80;
     location / {
@@ -21,7 +22,7 @@ server {
         index index.html;
     }
 }
-" | sudo tee /etc/nginx/sites-enabled/default > /dev/null
+" | sudo tee /etc/nginx/sites-available/default > /dev/null
     sudo mkdir -p /var/www/
 
     sudo echo -e "Hello World!" |
