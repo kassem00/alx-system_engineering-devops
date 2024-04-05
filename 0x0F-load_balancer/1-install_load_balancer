@@ -6,7 +6,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install haproxy
 sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
-sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.backup
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.backup
 sudo echo -e "
 frontend http_front
    bind *:80
@@ -17,6 +17,5 @@ backend http_back
    balance roundrobin
    server 284541-web-01  100.26.151.215:80 check
    server 284541-web-02  34.229.72.238:80 check
-" | sudo tee /etc/haproxy/haproxy.cfg
+" | sudo tee /etc/haproxy/haproxy.cfg > /dev/null
 sudo service haproxy start
-
