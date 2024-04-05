@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-#1. Install nginx web server
-#sudo apt-get -y update
+# 1. Install nginx web server
+sudo apt-get -y update
 
 if sudo apt-get -y install nginx; then
 sudo echo  -e "
      http {
+     	  add_header X-Served-By $HOSTNAME;
      	  include /etc/nginx/mime.types;
      	  default_type application/octet-stream;
      	  include /etc/nginx/conf.d/*.conf;
@@ -36,7 +37,4 @@ fi
 
 
 
-sudo sed -i "s/http {/http {\n\tadd_header X-Served-By $HOSTNAME;/"\
-     /etc/nginx/nginx.conf
 sudo service nginx start
-sudo service nginx restart
