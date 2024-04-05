@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#Configure your domain /sub domain
+
+if [ "$#" = 1 ]
+then
+    sub__domains=("www" "lb-01" "web-01" "web-02")
+        for sub_domain in "${sub__domains[@]}"
+	    do
+	    	record_type=$(dig $sub_domain.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $4}')
+		        dest=$(dig $sub_domain.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $5}')
+				echo "The subdomain $sub_domain is a $record_type record and points to $dest"
+				    done
+				    elif [ "$#" = 2 ]
+				    then
+				        record_type=$(dig $2.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $4}')
+					    dest=$(dig $2.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $5}')
+					        echo "The subdomain $2 is a $record_type record and points to $dest"
+						fi
+
