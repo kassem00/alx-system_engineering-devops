@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
-#Configure your domain /sub domain
+# 0-world
+info_fun () {
+    dig "$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/$1./$2/g"\
+ | awk -F" " ' NR==2 { print "The subdomain " $1 " is a " $4 " \
+	record and points to " $5 }'
+}
 
-if [ "$#" = 1 ]
+if [ "$#" -eq 2 ]
 then
-    sub__domains=("www" "lb-01" "web-01" "web-02")
-        for sub_domain in "${sub__domains[@]}"
-	    do
-	    	record_type=$(dig $sub_domain.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $4}')
-		        dest=$(dig $sub_domain.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $5}')
-				echo "The subdomain $sub_domain is a $record_type record and points to $dest"
-				    done
-				    elif [ "$#" = 2 ]
-				    then
-				        record_type=$(dig $2.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $4}')
-					    dest=$(dig $2.$1 | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $5}')
-					        echo "The subdomain $2 is a $record_type record and points to $dest"
-						fi
-
+    info_fun "$2.$1" "$2"
+else
+    info_fun "www.$1" "www"
+    info_fun "lb-01.$1" "lb-01"
+    info_fun "web-01.$1" "web-01"
+    info_fun "web-02.$1" "web-02"
+fi
