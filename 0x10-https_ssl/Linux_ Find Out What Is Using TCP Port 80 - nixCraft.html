@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/ -->
+<html dir="ltr" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.5.1",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),document.addEventListener("DOMContentLoaded",(()=>{this.p()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}k(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.M(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.M(t.target,"rocket-onclick","onclick"),this.O()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.M(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.O()}D(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}S(){return new Promise((t=>{this.T?this.O=t:t()}))}C(){this.T=!0}O(){this.T=!1}M(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}p(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&0!==i.indexOf("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.j(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.P(this),this.F(this),this.q(),this.A(),this.I(),await this.U(this.delayedScripts.normal),await this.U(this.delayedScripts.defer),await this.U(this.delayedScripts.async);try{await this.W(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.S().then((()=>{this.D()})),this.N()}A(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(function(){t.setAttribute("data-rocket-status","failed"),e()})),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed"),e()}}));t.setAttribute("data-rocket-status","skipped")}async U(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.U(t)):Promise.resolve()}I(){this.j([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}j(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o){const n=document.createElement("link");n.href=o,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),i.appendChild(n),this.trash.push(n)}})),document.head.appendChild(i)}P(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function n(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(n){t.everythingLoaded?o=n:e["rocket"+i]=o=n}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){if(o&&o.fn&&!t.allJQueries.includes(o)){o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])};const e=o.fn.on;o.fn.on=o.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this},t.allJQueries.push(o)}e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async W(){this.domReadyFired=!0,await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}q(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),n=i.parentElement;let s=t.get(i);void 0===s&&(s=i.nextSibling,t.set(i,s));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),n.insertBefore(c,s)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.k(t)}}RocketLazyLoadScripts.run()})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/" rel="dns-prefetch">
+<link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="">
+<link data-minify="1" href="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/icons.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" onerror="this.removeAttribute(&#39;data-rocket-async&#39;)" rel="stylesheet">
+<link data-minify="1" href="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/css.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" onerror="this.removeAttribute(&#39;data-rocket-async&#39;)" rel="stylesheet">
+<title>Linux: Find Out What Is Using TCP Port 80 - nixCraft</title><link rel="preload" as="style" href="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/css"><link rel="stylesheet" href="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/css" media="all" onload="this.media=&#39;all&#39;"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700%7CRoboto%20Mono%3A400%2C400i%2C700&#038;display=swap" /></noscript>
+<link href="https://www.cyberciti.com/faq/feed/" rel="alternate" type="application/rss+xml" title="nixCraft feed">
+<link href="https://www.cyberciti.biz/faq/wp-content/themes/thesis/lib/images/favicon.ico" rel="shortcut icon">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<meta name="description" content="Explains how to find out what is listing on TCP port number 80 on Linux based server / desktop / laptop systems.">
+<link rel="canonical" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux: Find Out What Is Using TCP Port 80">
+<meta property="og:description" content="Explains how to find out what is listing on TCP port number 80 on Linux based server / desktop / laptop systems.">
+<meta property="og:url" content="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/">
+<meta property="og:site_name" content="nixCraft">
+<meta property="article:publisher" content="https://facebook.com/nixcraft">
+<meta property="article:author" content="https://facebook.com/nixcraft">
+<meta property="article:published_time" content="2013-08-09T18:52:34+00:00">
+<meta property="article:modified_time" content="2024-04-03T11:14:19+00:00">
+<meta property="og:image" content="https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png">
+<meta name="author" content="Vivek Gite">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@nixcraft">
+<meta name="twitter:site" content="@nixcraft">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Vivek Gite">
+<meta name="twitter:label2" content="Est. reading time">
+<meta name="twitter:data2" content="2 minutes">
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#article","isPartOf":{"@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/"},"author":{"name":"Vivek Gite","@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761"},"headline":"Linux: Find Out What Is Using TCP Port 80","datePublished":"2013-08-09T18:52:34+00:00","dateModified":"2024-04-03T11:14:19+00:00","mainEntityOfPage":{"@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/"},"wordCount":523,"commentCount":6,"publisher":{"@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761"},"image":{"@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#primaryimage"},"thumbnailUrl":"https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png","keywords":["apt-cache command","Easy","grep command","lsof command","netstat command","rpm command","ss command","yum command"],"articleSection":["Linux","Networking"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#respond"]}]},{"@type":"WebPage","@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/","url":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/","name":"Linux: Find Out What Is Using TCP Port 80 - nixCraft","isPartOf":{"@id":"https://www.cyberciti.biz/faq/#website"},"primaryImageOfPage":{"@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#primaryimage"},"image":{"@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#primaryimage"},"thumbnailUrl":"https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png","datePublished":"2013-08-09T18:52:34+00:00","dateModified":"2024-04-03T11:14:19+00:00","description":"Explains how to find out what is listing on TCP port number 80 on Linux based server / desktop / laptop systems.","breadcrumb":{"@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#primaryimage","url":"https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png","contentUrl":"https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png"},{"@type":"BreadcrumbList","@id":"https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.cyberciti.biz/faq/"},{"@type":"ListItem","position":2,"name":"Linux: Find Out What Is Using TCP Port 80"}]},{"@type":"WebSite","@id":"https://www.cyberciti.biz/faq/#website","url":"https://www.cyberciti.biz/faq/","name":"nixCraft","description":"Linux / Unix tutorials for new and seasoned sysadmin || developers","publisher":{"@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761"},"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761","name":"Vivek Gite","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.cyberciti.biz/faq/#/schema/person/image/","url":"https://www.cyberciti.biz/media/new/faq/2017/04/new-nixcraft-logo.png","contentUrl":"https://www.cyberciti.biz/media/new/faq/2017/04/new-nixcraft-logo.png","width":42,"height":46,"caption":"Vivek Gite"},"logo":{"@id":"https://www.cyberciti.biz/faq/#/schema/person/image/"},"description":"Vivek Gite is the founder of nixCraft, the oldest running blog about Linux and open source. He wrote more than 7k+ posts and helped numerous readers to master IT topics. Join the nixCraft community via RSS Feed, Email Newsletter or follow on Twitter.","sameAs":["https://vivekgite.com/","https://facebook.com/nixcraft","https://www.instagram.com/nixcraft/","https://twitter.com/nixcraft","https://www.youtube.com/channel/UCrinGwmzp-LNcfvDeoBLAYQ","https://nixcraft.tumblr.com/"],"gender":"male","knowsAbout":["Linux","Bash","Programming","Python","C","Perl","Unix","FreeBSD"],"knowsLanguage":["English","Hindi"],"jobTitle":"CTO","worksFor":"nixCraft LTD","url":"https://www.cyberciti.biz/faq/author/administrator/"}]}</script>
+
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="nixCraft » Linux: Find Out What Is Using TCP Port 80 Comments Feed" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/feed/">
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.cyberciti.biz/faq/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<link rel="icon" href="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png" sizes="32x32">
+<link rel="icon" href="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png">
+<meta name="msapplication-TileImage" content="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script src="data:text/javascript;base64,Ci8qISBsb2FkQ1NTIHJlbD1wcmVsb2FkIHBvbHlmaWxsLiBbY10yMDE3IEZpbGFtZW50IEdyb3VwLCBJbmMuIE1JVCBMaWNlbnNlICovCihmdW5jdGlvbih3KXsidXNlIHN0cmljdCI7aWYoIXcubG9hZENTUyl7dy5sb2FkQ1NTPWZ1bmN0aW9uKCl7fX0KdmFyIHJwPWxvYWRDU1MucmVscHJlbG9hZD17fTtycC5zdXBwb3J0PShmdW5jdGlvbigpe3ZhciByZXQ7dHJ5e3JldD13LmRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoImxpbmsiKS5yZWxMaXN0LnN1cHBvcnRzKCJwcmVsb2FkIil9Y2F0Y2goZSl7cmV0PSExfQpyZXR1cm4gZnVuY3Rpb24oKXtyZXR1cm4gcmV0fX0pKCk7cnAuYmluZE1lZGlhVG9nZ2xlPWZ1bmN0aW9uKGxpbmspe3ZhciBmaW5hbE1lZGlhPWxpbmsubWVkaWF8fCJhbGwiO2Z1bmN0aW9uIGVuYWJsZVN0eWxlc2hlZXQoKXtsaW5rLm1lZGlhPWZpbmFsTWVkaWF9CmlmKGxpbmsuYWRkRXZlbnRMaXN0ZW5lcil7bGluay5hZGRFdmVudExpc3RlbmVyKCJsb2FkIixlbmFibGVTdHlsZXNoZWV0KX1lbHNlIGlmKGxpbmsuYXR0YWNoRXZlbnQpe2xpbmsuYXR0YWNoRXZlbnQoIm9ubG9hZCIsZW5hYmxlU3R5bGVzaGVldCl9CnNldFRpbWVvdXQoZnVuY3Rpb24oKXtsaW5rLnJlbD0ic3R5bGVzaGVldCI7bGluay5tZWRpYT0ib25seSB4In0pO3NldFRpbWVvdXQoZW5hYmxlU3R5bGVzaGVldCwzMDAwKX07cnAucG9seT1mdW5jdGlvbigpe2lmKHJwLnN1cHBvcnQoKSl7cmV0dXJufQp2YXIgbGlua3M9dy5kb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgibGluayIpO2Zvcih2YXIgaT0wO2k8bGlua3MubGVuZ3RoO2krKyl7dmFyIGxpbms9bGlua3NbaV07aWYobGluay5yZWw9PT0icHJlbG9hZCImJmxpbmsuZ2V0QXR0cmlidXRlKCJhcyIpPT09InN0eWxlIiYmIWxpbmsuZ2V0QXR0cmlidXRlKCJkYXRhLWxvYWRjc3MiKSl7bGluay5zZXRBdHRyaWJ1dGUoImRhdGEtbG9hZGNzcyIsITApO3JwLmJpbmRNZWRpYVRvZ2dsZShsaW5rKX19fTtpZighcnAuc3VwcG9ydCgpKXtycC5wb2x5KCk7dmFyIHJ1bj13LnNldEludGVydmFsKHJwLnBvbHksNTAwKTtpZih3LmFkZEV2ZW50TGlzdGVuZXIpe3cuYWRkRXZlbnRMaXN0ZW5lcigibG9hZCIsZnVuY3Rpb24oKXtycC5wb2x5KCk7dy5jbGVhckludGVydmFsKHJ1bil9KX1lbHNlIGlmKHcuYXR0YWNoRXZlbnQpe3cuYXR0YWNoRXZlbnQoIm9ubG9hZCIsZnVuY3Rpb24oKXtycC5wb2x5KCk7dy5jbGVhckludGVydmFsKHJ1bil9KX19CmlmKHR5cGVvZiBleHBvcnRzIT09InVuZGVmaW5lZCIpe2V4cG9ydHMubG9hZENTUz1sb2FkQ1NTfQplbHNle3cubG9hZENTUz1sb2FkQ1NTfX0odHlwZW9mIGdsb2JhbCE9PSJ1bmRlZmluZWQiP2dsb2JhbDp0aGlzKSkK" data-rocket-status="executed">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><script defer="" event-author="Vivek Gite" event-logged_in="false" event-cms-type="faq" event-primary-category="Linux" event-difficulty-level="Easy" data-domain="cyberciti.biz" src="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/script.pageview-props.js"></script></head>
+<body class="template-single has-sidebar">
+<div id="header">
+<div class="container">
+<div id="site_title" class="has-logo"><a href="https://www.cyberciti.biz/faq/"><img id="logo" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2042%2046&#39;%3E%3C/svg%3E" alt="nixCraft" width="42" height="46" data-lazy-src="https://www.cyberciti.biz/media/new/faq/2017/06/new-nixcraft-logo-cyberciti.biz_.png"><noscript><img id="logo" src="https://www.cyberciti.biz/media/new/faq/2017/06/new-nixcraft-logo-cyberciti.biz_.png" alt="nixCraft" width="42" height="46" /></noscript></a></div>
+</div>
+</div>
+<nav id="nav">
+<div class="container">
+<div class="crumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="https://www.cyberciti.biz/" itemprop="item"><span itemprop="name">nixCraft</span></a>
+<meta itemprop="position" content="1">
+</span>
+<span class="crumbs-sep crumbs-item">→</span>
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="https://www.cyberciti.biz/faq/" class="crumbs-home" itemprop="item"><span itemprop="name">Howto</span></a>
+<meta itemprop="position" content="2">
+</span>
+<span class="crumbs-sep crumbs-item">→</span>
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="https://www.cyberciti.biz/faq/category/linux/" itemprop="item"><span itemprop="name">Linux</span></a>
+<meta itemprop="position" content="3">
+</span>
+<span class="crumbs-sep crumbs-item">→</span>
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<span itemprop="name">Linux: How to Find What Is Using TCP Port 80</span>
+<meta itemprop="position" content="4">
+</span>
+</div>
+</div>
+</nav>
+<div id="content">
+<div class="container columns">
+<div class="content grt">
+<article id="post-13361" class="post_box text top">
+<div class="headline_area">
+<h1 class="headline"><a href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/" rel="bookmark">Linux: Find Out What Is Using TCP Port 80</a></h1>
+<div class="byline">
+<span class="post_author_intro">Author:</span> <span class="post_author">Vivek Gite</span>
+<span class="post_date_intro">Last updated:</span> <span class="post_date date_modified" title="2024-04-03">April 3, 2024</span>
+<a class="num_comments_link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comments" rel="nofollow"><span class="num_comments">6</span> comments</a>
+</div>
+</div>
+<div class="post_content">
+<div style="float: right; margin-top: 0; margin-left: 5px;"><a title="See all GNU/Linux related FAQ" href="https://www.cyberciti.biz/faq/category/linux/"><img decoding="async" width="128" height="128" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20128%20128&#39;%3E%3C/svg%3E" alt="See all GNU/Linux related FAQ" border="0" data-lazy-src="https://www.cyberciti.biz/media/new/category/old/linux-logo.png"><noscript><img decoding="async"  width="128" height="128" src="https://www.cyberciti.biz/media/new/category/old/linux-logo.png" alt="See all GNU/Linux related FAQ" border="0" /></noscript></a></div><span class="drop_cap">H</span>ow do I find out what is listing or using tcp port number 80 on Linux based systems using command line options?<br>
+<span id="more-13361"></span><br>
+You can use any one of the following command to find out what process is using TCP or UDP port number 80 on Linux operating systems:<p></p><br> <div id="card-151146" class="card">
+<div class="card-body">
+<div class="card-title">Support nixCraft!</div>
+<div class="card-text">
+<style type="text/css">
+.grt .patreonlist {
+    list-style-type: none;
+    margin-left: 0;
+}
+.grt .patreonlist > li:before {
+      content: '➔';
+      margin-right: 7px;
+      font-weight: bold;
+}
+.grt .patreonlist.blue > li:before {
+      color: cornflowerblue;
+}
+.grt .patreonblueartlist {
+    list-style-type: none;
+    margin-left: 1em;
+}
+.grt .patreonblueartlist > li:before {
+      content: '↪';
+      margin-right: 7px;
+      font-weight: bold;
+}
+.grt .patreonblueartlist.blue > li:before {
+      color: cornflowerblue;
+}
+.card .card-title {
+    color: cornflowerblue;
+}
+</style>
+<ul class="patreonlist blue">
+<li>nixCraft is a privacy-focused, Ad-free, and reader-supported site. Support independent tech content. Share this page on social media or become a Patron!</li>
+</ul>
+<p></p><center><a href="https://www.patreon.com/nixcraft" target="_blank" rel="noopener" class="button action">Join <strong>Patreon</strong> ➔</a></center><p></p>
+</div>
+</div>
+</div>
+<ol>
+<li><kbd><strong>netstat command</strong></kbd> – a command-line tool that displays network connections, routing tables, and a number of network interface statistics.</li>
+<li><kbd><strong><a href="https://www.cyberciti.biz/tips/linux-investigate-sockets-network-connections.html" title="ss command: Display Linux TCP / UDP Network/Socket Information">ss command</a></strong></kbd> – Modern replacement for the netstat under Linux.</li>
+<li><kbd><strong>fuser command</strong></kbd> – a command line tool to identify processes using files or sockets.</li>
+<li><kbd><strong>lsof command</strong></kbd> – a command line tool to list open files under Linux / UNIX to report a list of all open files and the processes that opened them.</li>
+<li><kbd><strong>/proc/$pid/</strong></kbd><strong> file system</strong> – Under Linux /proc includes a directory for each running process (including kernel processes) at /proc/PID, containing information about that process, notably including the processes name that opened port.</li>
+</ol>
+<style>
+table.tutorialrequirements {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+}
+table.tutorialrequirements td, table.tutorialrequirements th {
+  padding: 5px 5px;
+}
+table.tutorialrequirements tr:nth-child(even) {
+  background: #f7f7f7;
+}
+table.tutorialrequirements thead {
+  background: #f7f7f7;
+}
+table.tutorialrequirements thead th {
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+<table class="tutorialrequirements">
+<thead><tr>
+<th colspan="2">Tutorial details</th>
+</tr></thead> <tbody><tr> <td width="25%"><a name="tutorial_difficulty_level"></a><span title="The relative difficulty of completing this tutorial task">Difficulty level</span></td> <td width="75%"><a href="https://www.cyberciti.biz/faq/tag/easy/" title="See all Easy Linux / Unix System Administrator Tutorials">Easy</a></td> </tr> <tr> <td><a name="tutorial_difficulty_level"></a><span title="Indicates whether the root account requires for administrative purposes to complete this tutorial">Root privileges</span></td> <td><a href="https://www.cyberciti.biz/faq/how-can-i-log-in-as-root/" title="See how to login as root user">Yes</a></td> </tr> <tr> <td><a name="tutorial_difficulty_requirements"></a><span title="Minimum requirements to complete this tutorial">Requirements</span></td> <td>Linux terminal</td> </tr> <tr> <td><span title="Primary tutorial category">Category</span></td> <td>Processes Management</td> </tr> <tr> <td><a name="tutorial_os_compatibility"></a><span title="This tutorial is also compatible with the operating systems (OS) mentioned in the following column">OS compatibility</span></td> <td><span title="AlmaLinux">AlmaLinux</span> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/alpine-linux/" title="See all Alpine Linux tutorials">Alpine</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/aws-ec2-ebs-cloudfront/" title="See all Amazon Linux/AWS/EC2/RDS tutorials">Amazon Linux</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/arch-linux/" title="See all Arch Linux tutorials">Arch</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/centos/" title="See all CentOS Linux 6/7/x or older version tutorials">CentOS</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/debian-ubuntu/" title="See all Debian Linux tutorials">Debian</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/fedora-linux/" title="See all Fedora Linux Enterprise tutorials">Fedora</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/linux/" title="See all Linux distributions tutorials">Linux</a> <span style="color: #828282;">•</span> Mint <span style="color: #828282;">•</span> Mint <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/tag/opensuse/" title="See all openSUSE Linux Enterprise tutorials">openSUSE</a> <span style="color: #828282;">•</span> Pop!_OS <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/redhat-and-friends/" title="See all RHEL (Red Hat Enterprise Linux) tutorials">RHEL</a> <span style="color: #828282;">•</span> Rocky <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/tag/slackware-linux/" title="See all Slackware Linux tutorials">Slackware</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/tag/centos-stream/" title="See all CentOS Stream Linux tutorials">Stream</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/suse/" title="See all SUSE Linux Enterprise tutorials">SUSE</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/ubuntu-linux/" title="See all Ubuntu Linux tutorials">Ubuntu</a></td> </tr></tbody> <tbody><tr> <td><a name="tutorial_est_reading_time"></a><span title="Estimated reading time for this tutorial page">Est. reading time</span></td> <td>2 minutes</td> </tr></tbody></table>
+<h2>Examples</h2>
+<p>Open a terminal and then type the following command as root user to determine which program is using TCP port 80.</p>
+<h3><span style="color: rgb(102, 102, 204);">netstat command</span> find out what is using port 80</h3>
+<p>Type the following command<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>netstat -tulpn | grep :80<br>
+<span style="color: #999999;">## OR ##</span><br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>ss -tulpn | grep :80</code><br>
+OR pass the <a href="https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/" title="How to use grep command In Linux / UNIX with examples">--color option to grep command</a> (or just use the <a href="https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/" title="How to use grep command In Linux / UNIX with examples">grep command</a>) as follows:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>netstat -tulpn | grep --color :80<br>
+<span style="color: #999999;">## OR ##</span><br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>ss -tulpn | grep --color :80</code><br>
+Sample outputs:</p>
+<pre>tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      1215/nginx</pre>
+<p>Where,</p>
+<ol>
+<li>0 0.0.0.0:80 – Source IP:Port</li>
+<li>1215/nginx – PID/Process name</li>
+</ol>
+<p>The tcp port 80 is opened and used by nginx web server. Type the following command to find out more about nginx:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>whatis nginx<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>whereis nginx</code></p>
+<div class="box pop"><span title="You need to install an additional package to complete the tutorial" style="color: #339966;"><strong>Prerequisite</strong></span><br>By default, <tt>lsof and fuser</tt> command may not be installed on your system. Hence, use the <a href="https://www.cyberciti.biz/faq/10-alpine-linux-apk-command-examples/" title="10 Alpine Linux apk Command Examples">apk command</a> on Alpine Linux, dnf command/<a href="https://www.cyberciti.biz/faq/rhel-centos-fedora-linux-yum-command-howto/" title="How to use the yum command on Linux (CentOS/RHEL)">yum command</a> on RHEL &amp; co, <a href="https://www.cyberciti.biz/faq/ubuntu-lts-debian-linux-apt-command-examples/" title="apt Command Examples for Ubuntu/Debian Linux">apt command</a>/<a href="https://www.cyberciti.biz/tips/linux-debian-package-management-cheat-sheet.html" title="Ubuntu/Debian Linux apt-get package management cheat sheet">apt-get command</a> on Debian, Ubuntu &amp; co, zypper command on SUSE/OpenSUSE, pacman command on Arch Linux to install the <tt>lsof and fuser</tt>.</div>
+<h3>Use <span style="color: rgb(255, 153, 0);">/proc/$pid/exec file</span> find out what is using port 80</h3>
+<p>First, find out the processes PID that opened tcp port 90, enter:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>fuser 80/tcp</code><br>
+Sample outputs:</p>
+<pre>80/tcp:              12161 21776 25250 25393</pre>
+<p>Finally, find out process name associated with PID # 3813, enter:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>ls -l /proc/12161/exe</code><br>
+Sample outputs:</p>
+<pre>lrwxrwxrwx. 1 root root 0 Aug  9 13:28 /proc/12161/exe -&gt; <span style="color: rgb(0, 153, 0);">/usr/sbin/lighttpd</span></pre>
+<p>Find out more about the lighttpd process using the “<a href="https://bash.cyberciti.biz/guide/Help_command" title="help command - Linux Bash Shell Scripting Tutorial Wiki">help,</a>” “<a href="https://bash.cyberciti.biz/guide/Man_command" title="Man command - Linux Bash Shell Scripting Tutorial Wiki">man,</a>” “whatis, command” or “<a href="https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/" title="Linux / Unix whereis Command Examples">whereis</a>” commands. For instance:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>man lighttpd<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>whatis lighttpd<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>whereis lighttpd</code><br>
+Sample outputs:</p>
+<pre>lighttpd             (8)  - a fast, secure and flexible web server
+lighttpd: /usr/sbin/lighttpd /usr/lib64/lighttpd /usr/share/man/man8/lighttpd.8.gz</pre>
+<p>You can use package manager to dig into lighttpd using package manger such as <a href="https://www.cyberciti.biz/howto/question/linux/linux-rpm-cheat-sheet.php" title="Linux rpm command cheat sheet">rpm command</a>, <a href="https://www.cyberciti.biz/faq/ubuntu-lts-debian-linux-apt-command-examples/" title="apt Command Examples for Ubuntu/Debian Linux">apt command</a>/<a href="https://www.cyberciti.biz/tips/linux-debian-package-management-cheat-sheet.html" title="Ubuntu/Debian Linux apt-get package management cheat sheet">apt-get command</a> or <a href="https://www.cyberciti.biz/faq/rhel-centos-fedora-linux-yum-command-howto/" title="How to use the yum command on Linux (CentOS/RHEL)">yum command</a>/dnf command. For example:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>rpm -qa | grep lighttpd</code><br>
+Sample outputs:</p>
+<pre>lighttpd-1.4.32-1.el6.x86_64</pre>
+<p>To find out more about lighttpd-1.4.32-1.el6.x86_64 package, type:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>yum info lighttpd-1.4.32-1.el6.x86_64</code><br>
+Sample outputs:</p>
+<pre>Loaded plugins: auto-update-debuginfo, protectbase, rhnplugin, security
+This system is receiving updates from RHN Classic or RHN Satellite.
+0 packages excluded due to repository protections
+Installed Packages
+Name        : lighttpd
+Arch        : x86_64
+Version     : 1.4.32
+Release     : 1.el6
+Size        : 664 k
+Repo        : installed
+Summary     : A web server more optimized for speed-critical environments.
+URL         : http://lighttpd.net/
+License     : Revised BSD
+Description : It is a secure and fast web server a very low memory footprint compared
+            : to other webservers and takes care of cpu-load.
+</pre>
+<p>OR use the rpm command:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span> rpm -qi lighttpd</code><br>
+Sample outputs:</p>
+<pre>Name        : lighttpd                     Relocations: (not relocatable)
+Version     : 1.4.32                            Vendor: nixCraft
+Release     : 1.el6                         Build Date: Sun 03 Feb 2013 03:22:08 AM CST
+Install Date: Mon 04 Feb 2013 04:44:26 AM CST      Build Host: rhel6.nixcraft.net.in
+Group       : System Environment/Daemons    Source RPM: lighttpd-1.4.32-1.el6.src.rpm
+Size        : 680402                           License: Revised BSD
+Signature   : (none)
+URL         : http://lighttpd.net/
+Summary     : A web server more optimized for speed-critical environments.
+Description :
+It is a secure and fast web server a very low memory footprint compared
+to other webservers and takes care of cpu-load.
+</pre>
+<p>Debian / Ubuntu Linux user can use the following commands:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>dpkg --list | grep lighttpd<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>apt-cache search lighttpd<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>apt-cache show lighttpd</code><br>
+Sample outputs from the last command:</p>
+<pre>Package: lighttpd
+Priority: optional
+Section: universe/web
+Installed-Size: 841
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian lighttpd maintainers <pkg-lighttpd-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Version: 1.4.28-2ubuntu4
+Provides: httpd, httpd-cgi
+Depends: libattr1 (&gt;= 1:2.4.46-5), libbz2-1.0, libc6 (&gt;= 2.4), libgamin0 | libfam0, libldap-2.4-2 (&gt;= 2.4.7), libpcre3 (&gt;= 8.10), libssl1.0.0 (&gt;= 1.0.0), zlib1g (&gt;= 1:1.1.4), lsb-base (&gt;= 3.2-14), mime-support, libterm-readline-perl-perl
+Recommends: spawn-fcgi
+Suggests: openssl, rrdtool, apache2-utils, ufw
+Conflicts: cherokee (&lt;= 0.6.1-1)
+Filename: pool/universe/l/lighttpd/lighttpd_1.4.28-2ubuntu4_amd64.deb
+Size: 279838
+MD5sum: 65aedfd0e0ab6d3ee28e7b394567ed22
+SHA1: 34a9156fa3d23635eb24efb436de585c0594f046
+SHA256: 751d6f8309d249740d7aab240a74b6bae713e524cf6815544b6cdbb6107fded2
+Description-en: A fast webserver with minimal memory footprint
+ lighttpd is a small webserver and fast webserver developed with
+ security in mind and a lot of features.
+ It has support for
+   * CGI, FastCGI and SSI
+   * virtual hosts
+   * URL rewriting
+   * authentication (plain files, htpasswd, ldap)
+   * transparent content compression
+   * conditional configuration
+ and configuration is straight-forward and easy.
+Homepage: http://www.lighttpd.net
+Description-md5: 267ee2989b526d8253e822e7d8244ccd
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+</pkg-lighttpd-maintainers@lists.alioth.debian.org></ubuntu-devel-discuss@lists.ubuntu.com></pre>
+<p></p>
+<h3>Using <span style="color: rgb(153, 102, 51);">lsof command</span> find out what is using port 80</h3>
+<p>Type the following command<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>lsof -i :80 | grep LISTEN</code><br>
+Sample outputs indicating that apache2 server running on the TCP port 80 as www username:</p>
+<pre>apache2   1607     root    3u  IPv4   6472      0t0  TCP *:www (LISTEN)
+apache2   1616 www-data    3u  IPv4   6472      0t0  TCP *:www (LISTEN)
+apache2   1617 www-data    3u  IPv4   6472      0t0  TCP *:www (LISTEN)</pre>
+<div id="attachment_151533" style="width: 609px" class="wp-caption aligncenter"><a href="https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80.png"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-151533" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20599%20482&#39;%3E%3C/svg%3E" alt="Linux: Identify the Process Using TCP Port 80" width="599" height="482" class="size-medium wp-image-151533" data-lazy-srcset="https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png 599w, https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-1024x823.png 1024w, https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-1536x1235.png 1536w, https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80.png 1618w" data-lazy-sizes="(max-width: 599px) 100vw, 599px" data-lazy-src="https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png"><noscript><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-151533" src="https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png" alt="Linux: Identify the Process Using TCP Port 80" width="599" height="482" class="size-medium wp-image-151533" srcset="https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-599x482.png 599w, https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-1024x823.png 1024w, https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80-1536x1235.png 1536w, https://www.cyberciti.biz/media/new/faq/2013/08/Linux-Identify-the-Process-Using-TCP-Port-80.png 1618w" sizes="(max-width: 599px) 100vw, 599px" /></noscript></a><p id="caption-attachment-151533" class="wp-caption-text">Linux: Identify the Process Using TCP Port 80 (click to enlarge)</p></div>
+<h3>See also</h3>
+<ul>
+<li><a href="https://www.cyberciti.biz/faq/what-process-has-open-linux-port/">Linux: Find Out Which Process Is Listening Upon a Port</a></li>
+<li><a href="https://www.cyberciti.biz/tips/linux-investigate-sockets-network-connections.html">ss: Display Linux TCP / UDP Network and Socket Information</a></li>
+<li>See man pages for more info using the <a href="https://bash.cyberciti.biz/guide/Man_command" title="Man command - Linux Bash Shell Scripting Tutorial Wiki">man command</a> or <a href="https://bash.cyberciti.biz/guide/Help_command" title="help command - Linux Bash Shell Scripting Tutorial Wiki">help command</a>. For example:<br>
+<code><span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'lsof(8)<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'fuser(1)<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'proc(5)<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'netstat(8)<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'ss(8)</code></li>
+</ul>
+<p></p><div class="alert pop">
+<h3>Did you notice? 🧐</h3>
+nixCraft protects your privacy with an ad-free experience. Please help us keep it that way by supporting us on Patreon, PayPal, or our merchandise store.
+<br><br>
+<div class="nixcraft-self-promo-button-container">
+<a class="button save" href="https://www.patreon.com/nixcraft" rel="noopener" target="_blank" title="Please consider supporting nixCraft by Patreon."><strong>Patreon</strong> ➔</a>
+&nbsp;&nbsp;
+<a class="button save" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=LJF8UGD7QKF3U" rel="noopener" target="_blank" title="Please consider supporting nixCraft by PayPal."><strong>PayPal</strong> ➔</a>
+&nbsp;&nbsp;
+<a class="button save" href="https://nixcraft-2.creator-spring.com/" rel="noopener" target="_blank" title="Please consider supporting nixCraft by purchasing official merchandise."><strong>Shop</strong> ➔</a>
+</div>
+</div>
+</div>
+</article>
+<p class="author_description"><span class="author_description_intro">About the author:</span>
+Vivek Gite is the founder of nixCraft, the oldest running blog about Linux and open source. He wrote more than 7k+ posts and helped numerous readers to master IT topics. Join the nixCraft community via <a title="Get nixCraft updates using RSS feed" href="https://www.cyberciti.com/atom/atom.xml" rel="noopener" target="_blank">RSS Feed</a> or <a title="Get nixCraft updates using Email" href="https://newsletter.cyberciti.com/subscription?f=1ojtmiv8892KQzyMsTF4YPr1pPSAhX2rq7Qfe5DiHMgXwKo892di4MTWyOdd976343rcNR6LhdG1f7k9H8929kMNMdWu3g" rel="noopener" target="_blank">Email Newsletter</a>.
+<br><br>
+🥺 <span class="highlight">Was this helpful?</span> Please add <a href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#respond" title="Please add your comment below ↓ to show your appreciation or feedback to the author">a comment to show your appreciation or feedback</a>.
+</p>
+<div>
+<center>
+<form method="GET" class="search-form" action="https://www.google.com/cse" target="_top">
+<div class="search-form-inner">
+<input name="cx" type="hidden" value="c8e444503670f107a">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="nixcraftsearchbox" type="search" placeholder="🔎 To search, type &amp; hit enter..." name="q" required="">
+</div>
+</form>
+</center></div>
+
+<br>
+<div class="crp_related     crp-text-only"><span style="font-weight: bold;font-size: 20px;margin-bottom: 10px">Related Tutorials</span><div class="wp_rp_wrap"><div class="wp_rp_content"><ul class="related_post"><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/tcp-wrappers-hosts-allow-deny-tutorial/"><img width="150" height="150" alt="Explain: Linux and UNIX TCP Wrappers - Find Out If a…" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20150%20150&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/images/rp/13/15.jpg"><noscript><img width="150" height="150" alt="Explain: Linux and UNIX TCP Wrappers - Find Out If a&hellip;" src="https://www.cyberciti.biz/images/rp/13/15.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/tcp-wrappers-hosts-allow-deny-tutorial/" class="crp_link post-3994"><span class="crp_title">Explain: Linux and UNIX TCP Wrappers - Find Out If a…</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/find-out-which-service-listening-specific-port/"><img width="150" height="150" alt="Linux / UNIX Find Out What Program / Service is…" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20150%20150&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/images/rp/13/16.jpg"><noscript><img width="150" height="150" alt="Linux / UNIX Find Out What Program / Service is&hellip;" src="https://www.cyberciti.biz/images/rp/13/16.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/find-out-which-service-listening-specific-port/" class="crp_link post-958"><span class="crp_title">Linux / UNIX Find Out What Program / Service is…</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/ufw-allow-incoming-ssh-connections-from-a-specific-ip-address-subnet-on-ubuntu-debian/"><img width="96" height="96" alt="How to open ssh 22/TCP port using ufw on Ubuntu/Debian Linux" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2096%2096&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/images/rp/13/45.jpg"><noscript><img width="96" height="96" alt="How to open ssh 22/TCP port using ufw on Ubuntu/Debian Linux" src="https://www.cyberciti.biz/images/rp/13/45.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/ufw-allow-incoming-ssh-connections-from-a-specific-ip-address-subnet-on-ubuntu-debian/" class="crp_link post-145916"><span class="crp_title">How to open ssh 22/TCP port using ufw on Ubuntu/Debian Linux</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/linux-unix-tcp-port-forwarding/"><img width="93" height="99" alt="socat: Linux / UNIX TCP Port Forwarder" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2093%2099&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/images/rp/13/25.jpg"><noscript><img width="93" height="99" alt="socat: Linux / UNIX TCP Port Forwarder" src="https://www.cyberciti.biz/images/rp/13/25.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/linux-unix-tcp-port-forwarding/" class="crp_link post-6813"><span class="crp_title">socat: Linux / UNIX TCP Port Forwarder</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/howto-limiting-ssh-connections-with-ufw-on-ubuntu-debian/"><img width="150" height="150" alt="How to limit SSH (TCP port 22) connections with ufw…" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20150%20150&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/images/rp/13/16.jpg"><noscript><img width="150" height="150" alt="How to limit SSH (TCP port 22) connections with ufw&hellip;" src="https://www.cyberciti.biz/images/rp/13/16.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/howto-limiting-ssh-connections-with-ufw-on-ubuntu-debian/" class="crp_link post-145851"><span class="crp_title">How to limit SSH (TCP port 22) connections with ufw…</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/linux-find-out-which-port-is-open-using-the-command-line/"><img width="150" height="153" alt="Linux find out which port is open using the command line" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20150%20153&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/images/rp/13/7.jpg"><noscript><img width="150" height="153" alt="Linux find out which port is open using the command line" src="https://www.cyberciti.biz/images/rp/13/7.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/linux-find-out-which-port-is-open-using-the-command-line/" class="crp_link post-147301"><span class="crp_title">Linux find out which port is open using the command line</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/what-process-has-open-linux-port/"><img width="96" height="96" alt="Linux Find Out Which Process Is Listening Upon a Port" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2096%2096&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/images/rp/13/39.jpg"><noscript><img width="96" height="96" alt="Linux Find Out Which Process Is Listening Upon a Port" src="https://www.cyberciti.biz/images/rp/13/39.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/what-process-has-open-linux-port/" class="crp_link post-9174"><span class="crp_title">Linux Find Out Which Process Is Listening Upon a Port</span></a></li></ul></div></div><div class="crp_clear"></div></div> <div id="comments" class="text">
+<div class="comments_intro"><span class="num_comments">6</span> comments… <a href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#respond" rel="nofollow">add one</a></div>
+<ul class="comment_list">
+<li class="comment even thread-even depth-1" id="comment-96851">
+<div class="comment_header">
+<span class="comment_author">Jalal Hajigholamali</span>
+<span class="comment_date">Aug 10, 2013 @ 1:42</span>
+</div>
+<div class="comment_text" id="comment-body-96851">
+<p>Hi,</p>
+<p>Thanks a lot,</p>
+<p>i forwarded this article to my students</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-96851" data-commentid="96851" data-postid="13361" data-belowelement="comment-body-96851" data-respondelement="respond" data-replyto="Reply to Jalal Hajigholamali" aria-label="Reply to Jalal Hajigholamali">↩</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-96851" title="permalink to this comment" rel="nofollow">∞</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-96878">
+<div class="comment_header">
+<span class="comment_author">Meow</span>
+<span class="comment_date">Aug 10, 2013 @ 11:06</span>
+</div>
+<div class="comment_text" id="comment-body-96878">
+<p>you should introduce ss instead of netstat, because the later one is deprecated.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-96878" data-commentid="96878" data-postid="13361" data-belowelement="comment-body-96878" data-respondelement="respond" data-replyto="Reply to Meow" aria-label="Reply to Meow">↩</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-96878" title="permalink to this comment" rel="nofollow">∞</a>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-administrator bypostauthor even depth-2" id="comment-96955">
+<div class="comment_header">
+<span>🛡️</span><span style="float: right;"> <img style="vertical-align: middle;" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2016%2016&#39;%3E%3C/svg%3E" alt="Vivek Gite (Author and Admin)" width="16" height="16" border="0" title="Author/Admin" data-lazy-src="https://www.cyberciti.biz/media/new/images/vg-nixcraft-author.png"><noscript><img style="vertical-align: middle;" src="https://www.cyberciti.biz/media/new/images/vg-nixcraft-author.png" alt="Vivek Gite (Author and Admin)" width="16" height="16" border="0" title="Author/Admin"></noscript></span> <span class="comment_author"><a href="https://vivekgite.com/" class="url" rel="ugc external nofollow">nixCraft</a></span>
+<span class="comment_date">Aug 12, 2013 @ 11:23</span>
+</div>
+<div class="comment_text" id="comment-body-96955">
+<p>See “See also” section at the bottom of the faq.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-96955" data-commentid="96955" data-postid="13361" data-belowelement="comment-body-96955" data-respondelement="respond" data-replyto="Reply to nixCraft" aria-label="Reply to nixCraft">↩</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-96955" title="permalink to this comment" rel="nofollow">∞</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-97107">
+<div class="comment_header">
+<span class="comment_author">Erik</span>
+<span class="comment_date">Aug 15, 2013 @ 14:54</span>
+</div>
+<div class="comment_text" id="comment-body-97107">
+<p>I find ss to be MUCH faster then netstat. It lacks all the detailed output for netstat is perfect for the question asked. Also ss is great for scripts because of its speed. Especially for boxes that have hundreds to thousands of connections.<br>
+ss -anl4</p>
+<p>emathis@emathis-lappy:~$ time ss -anl &amp;&gt; /dev/null ; time netstat -anl &amp;&gt;/dev/null<br>
+real 0m0.009s<br>
+user 0m0.000s<br>
+sys 0m0.000s</p>
+<p>real 0m0.024s<br>
+user 0m0.008s<br>
+sys 0m0.012s</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-97107" data-commentid="97107" data-postid="13361" data-belowelement="comment-body-97107" data-respondelement="respond" data-replyto="Reply to Erik" aria-label="Reply to Erik">↩</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-97107" title="permalink to this comment" rel="nofollow">∞</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-731516">
+<div class="comment_header">
+<span class="comment_author">aref ghobadi</span>
+<span class="comment_date">Aug 16, 2015 @ 10:19</span>
+</div>
+<div class="comment_text" id="comment-body-731516">
+<p>Hi<br>
+thank you</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-731516" data-commentid="731516" data-postid="13361" data-belowelement="comment-body-731516" data-respondelement="respond" data-replyto="Reply to aref ghobadi" aria-label="Reply to aref ghobadi">↩</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-731516" title="permalink to this comment" rel="nofollow">∞</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-946064">
+<div class="comment_header">
+<span class="comment_author">Anonymous</span>
+<span class="comment_date">Apr 3, 2024 @ 11:15</span>
+</div>
+<div class="comment_text" id="comment-body-946064">
+<p>Still useful in 2024 :) Thank you, Linux master.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-946064" data-commentid="946064" data-postid="13361" data-belowelement="comment-body-946064" data-respondelement="respond" data-replyto="Reply to Anonymous" aria-label="Reply to Anonymous">↩</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#comment-946064" title="permalink to this comment" rel="nofollow">∞</a>
+</div>
+</li>
+</ul>
+<div id="respond" class="comment-respond">
+<p class="comment-reply-title">Leave a Reply<a rel="nofollow" id="cancel-comment-reply-link" href="https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/#respond" style="display:none;">Cancel reply</a></p><form action="https://www.cyberciti.biz/faq/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name</label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="13361" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form> </div>
+<div style="font-size: 0.85em;">
+<span class="highlight">Use <acronym title="HyperText Markup Language">HTML</acronym> &lt;pre&gt;...&lt;/pre&gt; for code samples. Your comment will appear only after approval by the site admin.</span>
+</div>
+</div>
+<div class="prev_next text">
+<p class="next_post">Next FAQ: <a href="https://www.cyberciti.biz/faq/starting-stopping-restarting-dhcpd-in-fedora-linux/" rel="next">Fedora Linux: Restart / Stop / Start DHCPD Server Command</a></p>
+<p class="previous_post">Previous FAQ: <a href="https://www.cyberciti.biz/faq/taking-screenshots-in-mac-os-x-command/" rel="prev">HowTo: OS X Take a Screenshot On My Mac Desktop</a></p>
+</div>
+</div>
+<div class="sidebar">
+<div class="social-profiles">
+<a class="icon-social" href="mailto:webmaster@cyberciti.biz"></a>
+<a class="icon-social" href="https://facebook.com/nixcraft"></a>
+<a class="icon-social" href="https://www.patreon.com/nixcraft"></a>
+<a class="icon-social" href="https://www.reddit.com/user/nixcraft/"></a>
+<a class="icon-social" href="https://twitter.com/nixcraft"></a>
+<a class="icon-social" href="https://www.youtube.com/@nixcraft"></a>
+</div>
+<div class="widget_text widget widget_custom_html" id="custom_html-13"><h3 class="widget_title">🤓 nixCraft SHOP 👇</h3><div class="textwidget custom-html-widget"><a target="_blank" rel="sponsored nofollow noopener" href="https://nixcraft-2.creator-spring.com/listing/freak-in-the-shell?product=46"><img width="350" height="350" alt="nixCraft Freak in Shell Tshirt" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20350%20350&#39;%3E%3C/svg%3E" data-lazy-src="https://www.cyberciti.biz/media/new/cms/2023/12/nixcraft-freak-in-shell-tshirt.jpg"><noscript><img width="350" height="350" alt="nixCraft Freak in Shell Tshirt" src="https://www.cyberciti.biz/media/new/cms/2023/12/nixcraft-freak-in-shell-tshirt.jpg"></noscript></a></div></div><div class="widget_text widget widget_custom_html" id="custom_html-12"><div class="textwidget custom-html-widget"><center>
+<div style="text-transform: uppercase; color: rgb(204, 204, 204);">🔎 SEARCH</div><br>
+<div> <form method="GET" class="search-form" action="https://www.google.com/cse" target="_top"> <div class="search-form-inner"> <input name="cx" type="hidden" value="c8e444503670f107a"> <input name="ie" type="hidden" value="UTF-8"> <input class="nixcraftsearchbox" type="search" placeholder="🔎 To search, type &amp; hit enter..." name="q" required=""> </div> </form></div>
+</center></div></div><div class="widget_text widget widget_custom_html" id="custom_html-14"><div class="textwidget custom-html-widget"></div></div><div class="widget_text widget widget_custom_html" id="custom_html-2"><h3 class="widget_title">🔥 FEATURED ARTICLES</h3><div class="textwidget custom-html-widget"><style>.topnum {
+    color: #ccc;
+    font-size: 40px;
+    float: left;
+    margin-top: -1px;
+    width: 15%;
+}
+</style>
+<div class="wp_rp_wrap">
+<div class="wp_rp_content">
+<ul class="related_post">
+<li><div class="topnum">1</div><a href="https://www.cyberciti.biz/open-source/30-cool-best-open-source-softwares-of-2013/">30 Cool Open Source Software I Discovered in 2013</a></li>
+<li><div class="topnum">2</div><a href="https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html">30 Handy Bash Shell Aliases For Linux / Unix / Mac OS X</a></li>
+<li><div class="topnum">3</div><a href="https://www.cyberciti.biz/networking/nmap-command-examples-tutorials/">Top 32 Nmap Command Examples For Linux Sys/Network Admins</a></li>
+<li><div class="topnum">4</div><a href="https://www.cyberciti.biz/tips/php-security-best-practices-tutorial.html">25 PHP Security Best Practices For Linux Sys Admins</a></li>
+<li><div class="topnum">5</div><a href="https://www.cyberciti.biz/tips/top-linux-monitoring-tools.html">30 Linux System Monitoring Tools Every SysAdmin Should Know</a></li>
+<li><div class="topnum">6</div><a href="https://www.cyberciti.biz/tips/linux-security.html">40 Linux Server Hardening Security Tips</a></li>
+<li><div class="topnum">7</div><a href="https://www.cyberciti.biz/tips/linux-iptables-examples.html">Linux: 25 Iptables Netfilter Firewall Examples For New SysAdmins</a></li>
+<li><div class="topnum">8</div><a href="https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices </a></li>
+<li><div class="topnum">9</div><a href="https://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html">Top 25 Nginx Web Server Best Security Practices</a></li>
+<li><div class="topnum">10</div><a href="https://www.cyberciti.biz/tips/my-10-unix-command-line-mistakes.html">My 10 UNIX Command Line Mistakes</a></li>
+</ul>
+</div>
+</div></div></div><div class="widget_text widget widget_custom_html" id="custom_html-15"><div class="textwidget custom-html-widget"></div></div><div class="widget_text widget widget_custom_html" id="custom_html-19"><h3 class="widget_title">📧 SIGN UP FOR MY NEWSLETTER</h3><div class="textwidget custom-html-widget"><center><div style="text-transform: uppercase; font-weight: bold; color: #ccc;"></div>
+<a href="https://newsletter.cyberciti.biz/subscription?f=1ojtmiv8892KQzyMsTF4YPr1pPSAhX2rq7Qfe5DiHMgXwKo892di4MTWyOdd976343rcNR6LhdG1f7k9H8929kMNMdWu3g"><img title="Email Subscription" src="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/inbox-sign-up.webp" alt="Sign up for my newsletter" width="300" height="141" data-lazy-src="https://www.cyberciti.biz/media/new/cms/2021/01/inbox-sign-up.002.jpeg" data-ll-status="loaded" class="entered lazyloaded"><noscript><img title="Email Subscription" src="https://www.cyberciti.biz/media/new/cms/2021/01/inbox-sign-up.002.jpeg" alt="Sign up for my newsletter" width="300" height="141" /></noscript></a></center></div></div><div class="widget_text widget widget_custom_html" id="custom_html-18"><h3 class="widget_title">👀 /etc</h3><div class="textwidget custom-html-widget"><style>.morenum {
+    color: #ccc;
+    font-size: 40px;
+    float: left;
+    width: 15%;
+}
+ul.cbz_site_links li{
+	position: relative;
+	list-style: none;
+	padding: 10px 0 10px 0;
+	margin: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background: none;
+}
+ul.cbz_site_links {
+    margin: 0 0 18px 0;
+    padding: 0;
+}
+</style>
+<ul class="cbz_site_links">
+<li><div class="morenum">➔</div><a title="Linux Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Main_Page">Linux shell scripting tutorial</a></li>
+<li><div class="morenum">➔</div><a href="https://www.cyberciti.com/atom/atom.xml" title="Get updates using RSS feed">RSS/Feed</a></li>
+<li><div class="morenum">➔</div><a href="https://www.cyberciti.biz/tips/about-us" title="About nixCraft">About nixCraft</a></li>
+<li><div class="morenum">➔</div><a target="_blank" rel="sponsored nofollow noopener" href="https://nixcraft-2.creator-spring.com/" title="nixCraft shop">nixCraft Shop</a></li>
+<li><div class="morenum">➔</div><a rel="me" href="https://mastodon.social/@nixCraft" title="Follow on Mastodon">Mastodon</a></li>
+</ul></div></div><div class="social-profiles">
+<a class="icon-social" href="mailto:webmaster@cyberciti.biz"></a>
+<a class="icon-social" href="https://facebook.com/nixcraft"></a>
+<a class="icon-social" href="https://www.patreon.com/nixcraft"></a>
+<a class="icon-social" href="https://www.reddit.com/user/nixcraft/"></a>
+<a class="icon-social" href="https://twitter.com/nixcraft"></a>
+<a class="icon-social" href="https://www.youtube.com/@nixcraft"></a>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="container">
+<div class="text_box">
+©2002-2024 nixCraft • <a href="https://www.cyberciti.biz/tips/privacy" title="Privacy policy">Privacy</a> • <a href="https://www.cyberciti.biz/tips/disclaimer" title="Term of Service">ToS</a> • <a href="https://www.cyberciti.biz/tips/contact-us" title="Contact us via Email">Contact/Email</a> • Corporate patron <a href="https://www.cyberciti.biz/tips/nixcraft-sponsors" title="Corporate patron">Cloudflare</a>
+</div>
+<div class="social-profiles">
+<a class="icon-social" href="mailto:webmaster@cyberciti.biz"></a>
+<a class="icon-social" href="https://facebook.com/nixcraft"></a>
+<a class="icon-social" href="https://www.patreon.com/nixcraft"></a>
+<a class="icon-social" href="https://www.reddit.com/user/nixcraft/"></a>
+<a class="icon-social" href="https://twitter.com/nixcraft"></a>
+<a class="icon-social" href="https://www.youtube.com/@nixcraft"></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" id="comment-reply-js" async="async" data-wp-strategy="async" src="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/comment-reply.min.js" data-rocket-status="executed"></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script><script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link data-minify="1" href="https://www.cyberciti.biz/faq/wp-content/cache/min/1/faq/wp-content/thesis/boxes/thesis-social-profiles/icons.css?ver=1712141469" rel="stylesheet" /><link data-minify="1" href="https://www.cyberciti.biz/faq/wp-content/cache/min/1/faq/wp-content/thesis/skins/focus/css.css?ver=1712141469" rel="stylesheet" /></noscript><script>(function(){if (!document.body) return;var js = "window['__CF$cv$params']={r:'8704cd743e6202d3',t:'MTcxMjQzODIyNC4wNTUwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./Linux_ Find Out What Is Using TCP Port 80 - nixCraft_files/saved_resource.html"></iframe>
+
+</body></html>
