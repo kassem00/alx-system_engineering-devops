@@ -14,7 +14,6 @@ if __name__ == "__main__":
     user = requests.get(url).json()
     todos = requests.get(url + "/todos").json()
     num_of_tasks = len(todos)
-    
     tasks_output = {in_id: []}
 
     for todo in todos:
