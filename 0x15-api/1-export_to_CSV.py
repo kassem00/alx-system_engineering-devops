@@ -4,9 +4,10 @@ using this REST API,
 for a given employee ID,
 returns information about his/her TODO list progress
 """
+import csv
 import requests
 import sys
-import csv
+
 if __name__ == "__main__":
     in_id = sys.argv[1]
     url = "https://jsonplaceholder.typicode.com/users/{}".format(in_id)
