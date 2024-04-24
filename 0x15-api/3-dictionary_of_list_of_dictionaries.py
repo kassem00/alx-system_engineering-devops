@@ -37,7 +37,7 @@ def main():
         } for todo in todos]
 
     with open('todo_all_employees.json', 'w') as f:
-        json.dump(all_tasks, f, indent=4)
+        json.dump(all_tasks, f)
 
     print("Data for all employees has been written to todo_all_employees.json")
 
