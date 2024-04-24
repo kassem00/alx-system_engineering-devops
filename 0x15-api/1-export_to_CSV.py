@@ -24,4 +24,5 @@ if __name__ == "__main__":
         sw = csv.writer(fp, delimiter=',',
                         quotechar='"', quoting=csv.QUOTE_ALL)
         for i in range(len(_tasks)):
-            sw.writerow([in_id, user['name'], todos[i]['completed'], _tasks[i]])
+            sw.writerow([in_id, user['name'],
+                         todos[i]['completed'], _tasks[i]])
