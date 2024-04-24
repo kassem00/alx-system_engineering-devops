@@ -23,4 +23,6 @@ if __name__ == "__main__":
             "username": user['username']
         })
 
-    print(tasks_output)
+    file_name = f"{in_id}.json"
+    with open(file_name, 'w') as fp:
+        json.dump(tasks_output, fp)
