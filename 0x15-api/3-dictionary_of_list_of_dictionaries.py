@@ -39,8 +39,6 @@ def main():
     with open('todo_all_employees.json', 'w') as f:
         json.dump(all_tasks, f)
 
-    print("Data for all employees has been written to todo_all_employees.json")
-
 
 if __name__ == "__main__":
     main()
