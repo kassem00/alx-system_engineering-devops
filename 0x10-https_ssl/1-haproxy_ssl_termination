@@ -54,5 +54,5 @@ frontend http_front
 
 backend ka0001
 	balance roundrobin
-   	server 284541-web-01	 100.26.151.215:80 check
-  	server 284541-web-02	 34.229.72.238:80 check
+        server 284541-web-01     100.25.34.155:80 check
+        server 284541-web-02     100.26.254.146:80 check
