@@ -12,8 +12,7 @@ http {
 }
 events {}
 " | sudo tee /etc/nginx/nginx.conf > /dev/null
-    sudo echo  -e
-"
+    sudo echo  -e "
 server {
   listen 80;
     location / {
@@ -25,7 +24,7 @@ server {
     sudo mkdir -p /var/www/
 
     echo "Hello World!" | sudo tee /var/www/index.html > /dev/null
-
+    sudo nginx -s reload
     sudo service nginx start
 else
     echo "Failed to install Nginx."
