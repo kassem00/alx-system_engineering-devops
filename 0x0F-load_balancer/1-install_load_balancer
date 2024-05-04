@@ -8,6 +8,13 @@ sudo apt-get -y install haproxy
 sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.backup
 sudo echo -e "
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+
 frontend http_front
    bind *:80
    stats uri /haproxy?stats
@@ -18,4 +25,5 @@ backend http_back
    server 284541-web-01  100.25.34.155:80 check
    server 284541-web-02  100.26.254.146:80 check
 " | sudo tee /etc/haproxy/haproxy.cfg > /dev/null
-sudo service haproxy start
+echo "configured"
+sudo service haproxy restart
