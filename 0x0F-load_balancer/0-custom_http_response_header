@@ -26,8 +26,8 @@ server {
     sudo mkdir -p /var/www/
 
     echo "Hello World!" | sudo tee /var/www/index.html > /dev/null
+    sudo service nginx restart
     sudo nginx -s reload
-    sudo service nginx start
 else
     echo "Failed to install Nginx."
     exit 1
