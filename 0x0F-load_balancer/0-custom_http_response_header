@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# 1. Install nginx web server
+#1. Install nginx web server
 sudo apt-get -y update
 
 if sudo apt-get -y install nginx; then
-sudo echo  -e "
+    sudo echo  -e "
      http {
      	  add_header X-Served-By $HOSTNAME;
      	  include /etc/nginx/mime.types;
@@ -12,10 +12,9 @@ sudo echo  -e "
     	  include /etc/nginx/sites-enabled/*;
 	  }
 events {}
+
 " | sudo tee /etc/nginx/nginx.conf > /dev/null
-sudo touch /etc/nginx/sites-available/default
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo echo  -e "
+    sudo echo  -e "
 server {
   listen 80;
     location / {
@@ -23,18 +22,13 @@ server {
         index index.html;
     }
 }
-" | sudo tee /etc/nginx/sites-available/default > /dev/null
+" | sudo tee /etc/nginx/sites-enabled/default > /dev/null
     sudo mkdir -p /var/www/
 
-    sudo echo -e "Hello World!" |
-	sudo tee /var/www/index.html > /dev/null
-
+    echo "Hello World!" | sudo tee /var/www/index.html > /dev/null
+    sudo nginx -s reload
     sudo service nginx start
 else
     echo "Failed to install Nginx."
     exit 1
 fi
-
-
-
-sudo service nginx start
