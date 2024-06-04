@@ -1,7 +1,7 @@
 import requests
 import sys
 """
-Write a function that queries the Reddit API and returns the number of 
+Write a function that queries the Reddit API and returns the number of
 subscribers (not active users, total subscribers)
 for a given subreddit. If an invalid subreddit
 is given, the function should return 0.
@@ -20,11 +20,12 @@ def number_of_subscribers(subreddit):
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
         if response.status_code != 200:
-            return 0;
+            return 0
         data = response.json()
         return data['data']['subscribers']
     except requests.RequestException:
         return 0
+
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
