@@ -4,6 +4,7 @@ Querying the Reddit API to return the number of subscribers for a given
 subreddit
 """
 import requests
+import sys
 
 
 def number_of_subscribers(subreddit):
@@ -24,7 +25,6 @@ def number_of_subscribers(subreddit):
 
 
 if __name__ == '__main__':
-    import sys
     if len(sys.argv) < 2:
         print("Please pass an argument for the subreddit to search.")
     else:
