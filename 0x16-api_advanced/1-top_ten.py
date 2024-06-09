@@ -7,27 +7,38 @@ import requests
 
 
 def top_ten(subreddit):
-    """Read Reddit API and return the number of subscribers"""
+    """Read Reddit API and return the titles of the top 10 hot posts for a given subreddit"""
     headers = {'User-Agent': 'ka'}
-    url = 'https://www.reddit.com/r/{}/top.json'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
 
     try:
-        response = requests.get(url,
-                                headers=headers,
-                                allow_redirects=False,
-                                params={"limit": 10}
-                                )
+        response = requests.get(url, headers=headers, allow_redirects=False, params={"limit": 10})
+        
+        # Check if the status code indicates a redirect or failure
+        if response.status_code == 302 or response.status_code == 404:
+            print("None")
+            return
         if response.status_code != 200:
-            print("Error: Status code", response.status_code)
+            print("None")
             return
 
-        try:
-            data = response.json()
-        except ValueError:
-            print("Error: Invalid JSON response")
+        data = response.json()
+        
+        # Extract and print titles of the top 10 hot posts
+        posts = data.get("data", {}).get("children", [])
+        if not posts:
+            print("None")
             return
 
-        for data_list in data.get("data", {}).get("children", []):
-            print(data_list.get("data", {}).get("title"))
-    except requests.RequestException as e:
-        print("Error: Request exception", str(e))
+        for post in posts:
+            print(post.get("data", {}).get("title", "None"))
+    except requests.RequestException:
+        print("None")
+
+# Testing with 1-main.py
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) < 2:
+        print("Please pass an argument for the subreddit to search.")
+    else:
+        top_ten(sys.argv[1])
