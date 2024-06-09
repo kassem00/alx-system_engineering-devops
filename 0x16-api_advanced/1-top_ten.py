@@ -7,14 +7,20 @@ import requests
 
 
 def top_ten(subreddit):
-    """Read Reddit API and return the titles of the top 10 hot posts for a given subreddit"""
+    """
+    Read Reddit API and return the titles of
+    the top 10 hot posts for a given subreddit
+    """
     headers = {'User-Agent': 'ka'}
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
 
     try:
-        response = requests.get(url, headers=headers, allow_redirects=False, params={"limit": 10})
-        
-        # Check if the status code indicates a redirect or failure
+        response = requests.get(url,
+                                headers=headers,
+                                allow_redirects=False,
+                                params={"limit": 10}
+                                )
+
         if response.status_code == 302 or response.status_code == 404:
             print("None")
             return
@@ -23,8 +29,6 @@ def top_ten(subreddit):
             return
 
         data = response.json()
-        
-        # Extract and print titles of the top 10 hot posts
         posts = data.get("data", {}).get("children", [])
         if not posts:
             print("None")
@@ -35,7 +39,6 @@ def top_ten(subreddit):
     except requests.RequestException:
         print("None")
 
-# Testing with 1-main.py
 if __name__ == '__main__':
     import sys
     if len(sys.argv) < 2:
