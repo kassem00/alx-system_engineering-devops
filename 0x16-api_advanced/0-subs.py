@@ -9,8 +9,7 @@ import sys
 
 def number_of_subscribers(subreddit):
     """Read Reddit API and return the number of subscribers"""
-    headers = {'User-Agent': 'Python: reddit.subscriber.counter: v1.0 \
-    (by /u/kaa)'}
+    headers = {'User-Agent': 'ka'}
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
 
     try:
@@ -18,7 +17,7 @@ def number_of_subscribers(subreddit):
         if response.status_code != 200:
             return 0
         data = response.json()
-        return data['data']['subscribers']
+        return data.get("data").get("subscribers")
 
     except requests.RequestException:
         return 0
